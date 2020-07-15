@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="tdsY8101M2_KO883" targetNamespace="http://tempuri.org/tdsY8101M2_KO883.xsd" xmlns:mstns="http://tempuri.org/tdsY8101M2_KO883.xsd" xmlns="http://tempuri.org/tdsY8101M2_KO883.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="tdsY8101M2_KO883" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="tdsY8101M2_KO883" msprop:Generator_DataSetName="tdsY8101M2_KO883" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="E_PMS_PROJECT_RATE" msprop:Generator_UserTableName="E_PMS_PROJECT_RATE" msprop:Generator_RowDeletedName="E_PMS_PROJECT_RATERowDeleted" msprop:Generator_RowChangedName="E_PMS_PROJECT_RATERowChanged" msprop:Generator_RowClassName="E_PMS_PROJECT_RATERow" msprop:Generator_RowChangingName="E_PMS_PROJECT_RATERowChanging" msprop:Generator_RowEvArgName="E_PMS_PROJECT_RATERowChangeEvent" msprop:Generator_RowEvHandlerName="E_PMS_PROJECT_RATERowChangeEventHandler" msprop:Generator_TableClassName="E_PMS_PROJECT_RATEDataTable" msprop:Generator_TableVarName="tableE_PMS_PROJECT_RATE" msprop:Generator_RowDeletingName="E_PMS_PROJECT_RATERowDeleting" msprop:Generator_TablePropName="E_PMS_PROJECT_RATE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DILIG_EMP_NO" msprop:Generator_UserColumnName="DILIG_EMP_NO" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="DILIG_EMP_NO" msprop:Generator_ColumnPropNameInTable="DILIG_EMP_NOColumn" msprop:Generator_ColumnVarNameInTable="columnDILIG_EMP_NO" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="dept_cd" msprop:Generator_UserColumnName="dept_cd" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="dept_cd" msprop:Generator_ColumnPropNameInTable="dept_cdColumn" msprop:Generator_ColumnVarNameInTable="columndept_cd" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="dept_nm" msprop:Generator_UserColumnName="dept_nm" msprop:nullValue="_empty" msprop:Generator_ColumnPropNameInRow="dept_nm" msprop:Generator_ColumnPropNameInTable="dept_nmColumn" msprop:Generator_ColumnVarNameInTable="columndept_nm" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="EMP_NAME" msprop:Generator_UserColumnName="EMP_NAME" msprop:Generator_ColumnVarNameInTable="columnEMP_NAME" msprop:Generator_ColumnPropNameInRow="EMP_NAME" msprop:Generator_ColumnPropNameInTable="EMP_NAMEColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ROLL_PSTN" msprop:Generator_UserColumnName="ROLL_PSTN" msprop:Generator_ColumnVarNameInTable="columnROLL_PSTN" msprop:Generator_ColumnPropNameInRow="ROLL_PSTN" msprop:Generator_ColumnPropNameInTable="ROLL_PSTNColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ROLL_PSTN_NM" msprop:Generator_UserColumnName="ROLL_PSTN_NM" msprop:Generator_ColumnVarNameInTable="columnROLL_PSTN_NM" msprop:Generator_ColumnPropNameInRow="ROLL_PSTN_NM" msprop:Generator_ColumnPropNameInTable="ROLL_PSTN_NMColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="BASIC_QTY" msprop:Generator_UserColumnName="BASIC_QTY" msprop:Generator_ColumnVarNameInTable="columnBASIC_QTY" msprop:Generator_ColumnPropNameInRow="BASIC_QTY" msprop:Generator_ColumnPropNameInTable="BASIC_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="USER_QTY" msprop:Generator_UserColumnName="USER_QTY" msprop:Generator_ColumnVarNameInTable="columnUSER_QTY" msprop:Generator_ColumnPropNameInRow="USER_QTY" msprop:Generator_ColumnPropNameInTable="USER_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="DILIG_DT" msprop:Generator_UserColumnName="DILIG_DT" msprop:Generator_ColumnPropNameInRow="DILIG_DT" msprop:Generator_ColumnVarNameInTable="columnDILIG_DT" msprop:Generator_ColumnPropNameInTable="DILIG_DTColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="YYYY" msprop:Generator_UserColumnName="YYYY" msprop:Generator_ColumnPropNameInRow="YYYY" msprop:Generator_ColumnVarNameInTable="columnYYYY" msprop:Generator_ColumnPropNameInTable="YYYYColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ETC1_QTY" msprop:Generator_UserColumnName="ETC1_QTY" msprop:Generator_ColumnPropNameInRow="ETC1_QTY" msprop:Generator_ColumnVarNameInTable="columnETC1_QTY" msprop:Generator_ColumnPropNameInTable="ETC1_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ETC2_QTY" msprop:Generator_UserColumnName="ETC2_QTY" msprop:Generator_ColumnPropNameInRow="ETC2_QTY" msprop:Generator_ColumnVarNameInTable="columnETC2_QTY" msprop:Generator_ColumnPropNameInTable="ETC2_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="I_PMS_PROJECT_RATE" msprop:Generator_UserTableName="I_PMS_PROJECT_RATE" msprop:Generator_RowDeletedName="I_PMS_PROJECT_RATERowDeleted" msprop:Generator_RowChangedName="I_PMS_PROJECT_RATERowChanged" msprop:Generator_RowClassName="I_PMS_PROJECT_RATERow" msprop:Generator_RowChangingName="I_PMS_PROJECT_RATERowChanging" msprop:Generator_RowEvArgName="I_PMS_PROJECT_RATERowChangeEvent" msprop:Generator_RowEvHandlerName="I_PMS_PROJECT_RATERowChangeEventHandler" msprop:Generator_TableClassName="I_PMS_PROJECT_RATEDataTable" msprop:Generator_TableVarName="tableI_PMS_PROJECT_RATE" msprop:Generator_RowDeletingName="I_PMS_PROJECT_RATERowDeleting" msprop:Generator_TablePropName="I_PMS_PROJECT_RATE">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="YYYY" msprop:Generator_UserColumnName="YYYY" msprop:Generator_ColumnPropNameInRow="YYYY" msprop:Generator_ColumnVarNameInTable="columnYYYY" msprop:Generator_ColumnPropNameInTable="YYYYColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="DILIG_EMP_NO" msprop:Generator_UserColumnName="DILIG_EMP_NO" msprop:Generator_ColumnPropNameInRow="DILIG_EMP_NO" msprop:Generator_ColumnVarNameInTable="columnDILIG_EMP_NO" msprop:Generator_ColumnPropNameInTable="DILIG_EMP_NOColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="BASIC_QTY" msprop:Generator_UserColumnName="BASIC_QTY" msprop:Generator_ColumnPropNameInRow="BASIC_QTY" msprop:Generator_ColumnVarNameInTable="columnBASIC_QTY" msprop:Generator_ColumnPropNameInTable="BASIC_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ETC1_QTY" msprop:Generator_UserColumnName="ETC1_QTY" msprop:Generator_ColumnPropNameInRow="ETC1_QTY" msprop:Generator_ColumnVarNameInTable="columnETC1_QTY" msprop:Generator_ColumnPropNameInTable="ETC1_QTYColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ETC2_QTY" msprop:Generator_UserColumnName="ETC2_QTY" msprop:Generator_ColumnPropNameInRow="ETC2_QTY" msprop:Generator_ColumnVarNameInTable="columnETC2_QTY" msprop:Generator_ColumnPropNameInTable="ETC2_QTYColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="USER_QTY" msprop:Generator_UserColumnName="USER_QTY" msprop:Generator_ColumnPropNameInRow="USER_QTY" msprop:Generator_ColumnVarNameInTable="columnUSER_QTY" msprop:Generator_ColumnPropNameInTable="USER_QTYColumn" type="xs:decimal" minOccurs="0" />
+              <xs:element name="CUD_CHAR" msprop:Generator_UserColumnName="CUD_CHAR" msprop:Generator_ColumnPropNameInRow="CUD_CHAR" msprop:Generator_ColumnVarNameInTable="columnCUD_CHAR" msprop:Generator_ColumnPropNameInTable="CUD_CHARColumn" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="ROW_NUM" msprop:Generator_UserColumnName="ROW_NUM" msprop:Generator_ColumnPropNameInRow="ROW_NUM" msprop:Generator_ColumnVarNameInTable="columnROW_NUM" msprop:Generator_ColumnPropNameInTable="ROW_NUMColumn" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="E_PMS_PROJECT_RATE1" msprop:Generator_UserTableName="E_PMS_PROJECT_RATE1" msprop:Generator_RowDeletedName="E_PMS_PROJECT_RATE1RowDeleted" msprop:Generator_RowChangedName="E_PMS_PROJECT_RATE1RowChanged" msprop:Generator_RowClassName="E_PMS_PROJECT_RATE1Row" msprop:Generator_RowChangingName="E_PMS_PROJECT_RATE1RowChanging" msprop:Generator_RowEvArgName="E_PMS_PROJECT_RATE1RowChangeEvent" msprop:Generator_RowEvHandlerName="E_PMS_PROJECT_RATE1RowChangeEventHandler" msprop:Generator_TableClassName="E_PMS_PROJECT_RATE1DataTable" msprop:Generator_TableVarName="tableE_PMS_PROJECT_RATE1" msprop:Generator_RowDeletingName="E_PMS_PROJECT_RATE1RowDeleting" msprop:Generator_TablePropName="E_PMS_PROJECT_RATE1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="emp_no" msprop:Generator_UserColumnName="emp_no" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnemp_no" msprop:Generator_ColumnPropNameInTable="emp_noColumn" msprop:Generator_ColumnPropNameInRow="emp_no" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="dept_cd" msprop:Generator_UserColumnName="dept_cd" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columndept_cd" msprop:Generator_ColumnPropNameInTable="dept_cdColumn" msprop:Generator_ColumnPropNameInRow="dept_cd" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="dept_nm" msprop:Generator_UserColumnName="dept_nm" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columndept_nm" msprop:Generator_ColumnPropNameInTable="dept_nmColumn" msprop:Generator_ColumnPropNameInRow="dept_nm" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="project_code" msprop:Generator_UserColumnName="project_code" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnproject_code" msprop:Generator_ColumnPropNameInTable="project_codeColumn" msprop:Generator_ColumnPropNameInRow="project_code" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="project_nm" msprop:Generator_UserColumnName="project_nm" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnproject_nm" msprop:Generator_ColumnPropNameInTable="project_nmColumn" msprop:Generator_ColumnPropNameInRow="project_nm" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="yyyymm" msprop:Generator_UserColumnName="yyyymm" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnyyyymm" msprop:Generator_ColumnPropNameInTable="yyyymmColumn" msprop:Generator_ColumnPropNameInRow="yyyymm" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="in_rate" msprop:Generator_UserColumnName="in_rate" msprop:Generator_ColumnVarNameInTable="columnin_rate" msprop:Generator_ColumnPropNameInRow="in_rate" msprop:Generator_ColumnPropNameInTable="in_rateColumn" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="plan_start_dt" msprop:Generator_UserColumnName="plan_start_dt" msprop:Generator_ColumnVarNameInTable="columnplan_start_dt" msprop:Generator_ColumnPropNameInRow="plan_start_dt" msprop:Generator_ColumnPropNameInTable="plan_start_dtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="plan_end_dt" msprop:Generator_UserColumnName="plan_end_dt" msprop:Generator_ColumnVarNameInTable="columnplan_end_dt" msprop:Generator_ColumnPropNameInRow="plan_end_dt" msprop:Generator_ColumnPropNameInTable="plan_end_dtColumn" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="remark" msprop:Generator_UserColumnName="remark" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_ColumnPropNameInRow="remark" type="xs:string" default="" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="E_PMS_PROJECT_RATE_Common" msprop:Generator_UserTableName="E_PMS_PROJECT_RATE_Common" msprop:Generator_RowDeletedName="E_PMS_PROJECT_RATE_CommonRowDeleted" msprop:Generator_RowChangedName="E_PMS_PROJECT_RATE_CommonRowChanged" msprop:Generator_RowClassName="E_PMS_PROJECT_RATE_CommonRow" msprop:Generator_RowChangingName="E_PMS_PROJECT_RATE_CommonRowChanging" msprop:Generator_RowEvArgName="E_PMS_PROJECT_RATE_CommonRowChangeEvent" msprop:Generator_RowEvHandlerName="E_PMS_PROJECT_RATE_CommonRowChangeEventHandler" msprop:Generator_TableClassName="E_PMS_PROJECT_RATE_CommonDataTable" msprop:Generator_TableVarName="tableE_PMS_PROJECT_RATE_Common" msprop:Generator_RowDeletingName="E_PMS_PROJECT_RATE_CommonRowDeleting" msprop:Generator_TablePropName="E_PMS_PROJECT_RATE_Common">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="yyyymm" msprop:Generator_UserColumnName="yyyymm" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnyyyymm" msprop:Generator_ColumnPropNameInTable="yyyymmColumn" msprop:Generator_ColumnPropNameInRow="yyyymm" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="updt_user_id" msprop:Generator_UserColumnName="updt_user_id" msprop:nullValue="_empty" msprop:Generator_ColumnVarNameInTable="columnupdt_user_id" msprop:Generator_ColumnPropNameInTable="updt_user_idColumn" msprop:Generator_ColumnPropNameInRow="updt_user_id" type="xs:string" default="" minOccurs="0" />
+              <xs:element name="updt_dt" msprop:Generator_UserColumnName="updt_dt" msprop:Generator_ColumnPropNameInRow="updt_dt" msprop:Generator_ColumnVarNameInTable="columnupdt_dt" msprop:Generator_ColumnPropNameInTable="updt_dtColumn" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
