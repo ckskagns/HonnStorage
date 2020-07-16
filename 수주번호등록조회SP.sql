@@ -1,8 +1,8 @@
 
-CREATE PROCEDURE [dbo].[USP_H4007M5_KO883P_111]            
+create PROCEDURE [dbo].[USP_H4007M5_KO883P_111]            
  (                        
-	@DILIG_EMP_NO    nvarchar(26)  --»ç¹ø                
-    , @DEPT_CD    nvarchar(26)  --ºÎ¼­                         
+	@EMP_NO    nvarchar(26)  --ì‚¬ë²ˆ                
+    , @DEPT_CD    nvarchar(26)  --ë¶€ì„œ                         
  ) AS                      
                 
  BEGIN                                          
@@ -33,7 +33,9 @@ select
   --a.ETC1_QTY,  
   --a.USER_QTY     
  from HAA010T(NOLOCK) a    
- join Ex_Number B on A.emp_no = B.emp_no    
+ join Ex_Number B on A.emp_no = B.emp_no
+ join dbo.ufn_h_getdeptdata(GETDATE()) dept on A.EMP_NO = dept.emp_no
+ where (@EMP_NO ='' or A.EMP_NO = @EMP_NO ) and (@DEPT_CD = '' or dept.dept_cd = @DEPT_CD)     
   order by   a.ROLL_PSTN    
             
  END 
