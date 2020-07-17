@@ -1,18 +1,20 @@
 
---Å×ÀÌºí º¯¼ö ¸¸µå´Â ·ÎÁ÷
+--í…Œì´ë¸” ë³€ìˆ˜ ë§Œë“œëŠ” ë¡œì§
 --  CREATE TYPE UTP_H4007M5_KO883 AS TABLE
 --(
---    EMP_NO   NVARCHAR(26)                       
---  , ST_NUM NVARCHAR (40)            
---  , BIND_NUM  NVARCHAR (40)                        
---  , EMAIL NVARCHAR(80)                
---  , G_EMAIL  NVARCHAR(80)                  
---  , CUD_CHAR NVARCHAR(2)                
---  , ROW_NUM  INT                  
---  , ERROR_NUMBER INT   
+--    YYYY     NVARCHAR(6) NULL
+--  , EMP_NO   NVARCHAR(26)  NULL                       
+--  , ST_NUM NVARCHAR (40)  NULL     
+--  , BIND_NUM  NVARCHAR (40) NULL                     
+--  , EMAIL NVARCHAR(80)   NULL                 
+--  , CUD_CHAR NVARCHAR(2)  NULL          
+--  , ROW_NUM  INT          NULL    
+  
 --);
+
+
             
-CREATE PROCEDURE [dbo].[USP_H4007M5_KO883_CUD]              
+ALTER PROCEDURE [dbo].[USP_H4007M5_KO883_CUD]              
 (               
   @TBL_DATA    UTP_H4007M5_KO883 READONLY              
 , @USER_ID    NVARCHAR(13)              
@@ -25,12 +27,12 @@ AS
 BEGIN              
  SET NOCOUNT ON              
               
- DECLARE                    
-    @EMP_NO   NVARCHAR(26)                       
+ DECLARE
+    @YYYY   NVARCHAR(06)                  
+  , @EMP_NO   NVARCHAR(26)                       
   , @ST_NUM NVARCHAR (40)            
   , @BIND_NUM  NVARCHAR (40)                        
-  , @EMAIL NVARCHAR(80)                
-  , @G_EMAIL  NVARCHAR(80)                  
+  , @EMAIL NVARCHAR(80)                                
   , @CUD_CHAR NVARCHAR(2)                
   , @ROW_NUM  INT                  
   , @ERROR_NUMBER INT                     
@@ -43,25 +45,25 @@ BEGIN
   DECLARE CUR_H4007M5_KO883 CURSOR LOCAL FOR              
               
   SELECT              
-     EMP_NO
+     YYYY
+   , EMP_NO
    , ST_NUM
    , BIND_NUM
    , EMAIL
-   , G_EMAIL
-   , CUD_CHAR               
+   , CUD_CHAR
    , ROW_NUM
                  
    FROM @TBL_DATA              
               
   OPEN CUR_H4007M5_KO883               
   FETCH NEXT FROM CUR_H4007M5_KO883              
-  INTO               
-     @EMP_NO
+  INTO       
+     @YYYY        
+   , @EMP_NO
    , @ST_NUM
    , @BIND_NUM
    , @EMAIL
-   , @G_EMAIL
-   , @CUD_CHAR               
+   , @CUD_CHAR
    , @ROW_NUM
  --@YYYY              
  -- , @DILIG_EMP_NO              
@@ -81,16 +83,18 @@ BEGIN
   BEGIN              
        
     INSERT INTO Ex_Number              
-    (              
-     EMP_NO
+    (
+	 YYYY             
+   , EMP_NO
    , ST_NUM
    , BIND_NUM
    , EMAIL
                   
     )              
     VALUES              
-    (              
-	 @EMP_NO
+    (
+	 @YYYY              
+   , @EMP_NO
    , @ST_NUM
    , @BIND_NUM
    , @EMAIL
@@ -106,7 +110,10 @@ BEGIN
 	ST_NUM = @ST_NUM
    ,BIND_NUM = @BIND_NUM
    ,EMAIL = @EMAIL
+   ,UPDT_EMP_NO = @USER_ID              
+   ,UPDT_DT   = GETDATE()  
    WHERE
+    YYYY = @YYYY AND
 	EMP_NO = @EMP_NO
 	                  
  --    BASIC_QTY   = @BASIC_QTY        
@@ -125,27 +132,28 @@ BEGIN
   BEGIN              
                   
     DELETE FROM Ex_Number               
-    WHERE              
+    WHERE     
+	  YYYY = @YYYY   AND      
       EMP_NO = @EMP_NO          
       
               
   END              
-         IF (@CUD_CHAR <> 'D')       
-          BEGIN          
-    BEGIN      
-         SET @MSG_CD   = '122918' -- %1 ÀúÀå¿¡ ½ÇÆÐÇß½À´Ï´Ù.                   
-     RAISERROR(@MSG_CD, 16, 1)      
-    END      
-    END      
+    --     IF (@CUD_CHAR <> 'D')       
+    --      BEGIN          
+    --BEGIN      
+    --     SET @MSG_CD   = '122918' -- %1 ì €ìž¥ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.                   
+    -- RAISERROR(@MSG_CD, 16, 1)      
+    --END      
+    --END      
         
                
   FETCH NEXT FROM CUR_H4007M5_KO883              
-  INTO               
-     @EMP_NO
+  INTO  
+     @YYYY          
+   , @EMP_NO
    , @ST_NUM
    , @BIND_NUM
    , @EMAIL
-   , @G_EMAIL
    , @CUD_CHAR               
    , @ROW_NUM          
               
@@ -161,19 +169,19 @@ BEGIN
                
  SET @ERROR_NUMBER = ERROR_NUMBER()              
                 
-  IF @ERROR_NUMBER = 2627  --%1! Á¦¾à Á¶°Ç '%2!'À»(¸¦) À§¹ÝÇß½À´Ï´Ù. °³Ã¼ '%3!'¿¡ Áßº¹ Å°¸¦ »ðÀÔÇÒ ¼ö ¾ø½À´Ï´Ù. Áßº¹ Å° °ªÀº %4!ÀÔ´Ï´Ù.              
+  IF @ERROR_NUMBER = 2627  --%1! ì œì•½ ì¡°ê±´ '%2!'ì„(ë¥¼) ìœ„ë°˜í–ˆìŠµë‹ˆë‹¤. ê°œì²´ '%3!'ì— ì¤‘ë³µ í‚¤ë¥¼ ì‚½ìž…í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤. ì¤‘ë³µ í‚¤ ê°’ì€ %4!ìž…ë‹ˆë‹¤.              
    BEGIN              
-    SET @MSG_CD   = '970001' -- %1 ÀÌ(°¡) ÀÌ¹Ì Á¸ÀçÇÕ´Ï´Ù.                         
+    SET @MSG_CD   = '970001' -- %1 ì´(ê°€) ì´ë¯¸ ì¡´ìž¬í•©ë‹ˆë‹¤.                         
    END              
               
-  ELSE IF @ERROR_NUMBER = 547  -- %1! ¹®ÀÌ %2! Á¦¾à Á¶°Ç "%3!"°ú(¿Í) Ãæµ¹Çß½À´Ï´Ù. µ¥ÀÌÅÍº£ÀÌ½º "%4!", Å×ÀÌºí "%5!"%6!%7!%8!¿¡¼­ Ãæµ¹ÀÌ ¹ß»ýÇß½À´Ï´Ù.              
+  ELSE IF @ERROR_NUMBER = 547  -- %1! ë¬¸ì´ %2! ì œì•½ ì¡°ê±´ "%3!"ê³¼(ì™€) ì¶©ëŒí–ˆìŠµë‹ˆë‹¤. ë°ì´í„°ë² ì´ìŠ¤ "%4!", í…Œì´ë¸” "%5!"%6!%7!%8!ì—ì„œ ì¶©ëŒì´ ë°œìƒí–ˆìŠµë‹ˆë‹¤.              
    BEGIN              
-    SET @MSG_CD   = '971000' -- %1 ÀÌ(°¡) ÂüÁ¶ÇÏ°í ÀÖ´Â µ¥ÀÌÅÍ°¡ ÀÖ½À´Ï´Ù. ÀÛ¾÷À» ÁøÇàÇÒ ¼ö ¾ø½À´Ï´Ù.                         
+    SET @MSG_CD   = '971000' -- %1 ì´(ê°€) ì°¸ì¡°í•˜ê³  ìžˆëŠ” ë°ì´í„°ê°€ ìžˆìŠµë‹ˆë‹¤. ìž‘ì—…ì„ ì§„í–‰í•  ìˆ˜ ì—†ìŠµë‹ˆë‹¤.                         
    END              
               
-  ELSE IF @ERROR_NUMBER = 1205  -- Æ®·£Àè¼Ç(ÇÁ·Î¼¼½º ID %1!)ÀÌ %2! ¸®¼Ò½º¿¡¼­ ´Ù¸¥ ÇÁ·Î¼¼½º¿ÍÀÇ ±³Âø »óÅÂ°¡ ¹ß»ýÇÏ¿© ½ÇÇàÀÌ ÁßÁöµÇ¾ú½À´Ï´Ù. Æ®·£Àè¼ÇÀ» ´Ù½Ã ½ÇÇàÇÏ½Ê½Ã¿À.              
+  ELSE IF @ERROR_NUMBER = 1205  -- íŠ¸ëžœìž­ì…˜(í”„ë¡œì„¸ìŠ¤ ID %1!)ì´ %2! ë¦¬ì†ŒìŠ¤ì—ì„œ ë‹¤ë¥¸ í”„ë¡œì„¸ìŠ¤ì™€ì˜ êµì°© ìƒíƒœê°€ ë°œìƒí•˜ì—¬ ì‹¤í–‰ì´ ì¤‘ì§€ë˜ì—ˆìŠµë‹ˆë‹¤. íŠ¸ëžœìž­ì…˜ì„ ë‹¤ì‹œ ì‹¤í–‰í•˜ì‹­ì‹œì˜¤.              
    BEGIN              
-    SET @MSG_CD   = '122918' -- %1 ÀúÀå¿¡ ½ÇÆÐÇß½À´Ï´Ù.                     
+    SET @MSG_CD   = '122918' -- %1 ì €ìž¥ì— ì‹¤íŒ¨í–ˆìŠµë‹ˆë‹¤.                     
    END              
               
   ELSE              
