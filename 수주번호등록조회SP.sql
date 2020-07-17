@@ -1,3 +1,4 @@
+
 ALTER PROCEDURE [dbo].[USP_H4007M5_KO883P_111]            
  (                        
 	@EMP_NO    nvarchar(26)  --사번                
@@ -12,6 +13,7 @@ SET NOCOUNT ON
              
     
 select 
+    b.YYYY,
     a.EMP_NO,
 	a.name,
 	a.DEPT_NM,
