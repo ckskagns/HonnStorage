@@ -1,8 +1,8 @@
-
-create PROCEDURE [dbo].[USP_H4007M5_KO883P_111]            
+ALTER PROCEDURE [dbo].[USP_H4007M5_KO883P_111]            
  (                        
 	@EMP_NO    nvarchar(26)  --사번                
-    , @DEPT_CD    nvarchar(26)  --부서                         
+    , @DEPT_CD nvarchar(26)  --부서  
+	, @YYYY    nchar(4)      --기준년도                     
  ) AS                      
                 
  BEGIN                                          
@@ -21,21 +21,11 @@ select
 	b.EMAIL,
 	dbo.ufn_getcodename('CTEST', a.DEPT_NM) as G_EMAIL,
 	a.HAND_TEL_NO
-
-  --A.YYYY,     
-  --A.DILIG_EMP_NO,     
-  --b.NAME as EMP_NAME,    
-  --B.roll_pstn as ROLL_PSTN,     
-  --dbo.ufn_getcodename('h0002', B.roll_pstn) as ROLL_PSTN_NM,    
-  --dept.dept_cd,    
-  --dept.dept_nm,     
-  --a.BASIC_QTY,     
-  --a.ETC1_QTY,  
-  --a.USER_QTY     
+   
  from HAA010T(NOLOCK) a    
  join Ex_Number B on A.emp_no = B.emp_no
  join dbo.ufn_h_getdeptdata(GETDATE()) dept on A.EMP_NO = dept.emp_no
- where (@EMP_NO ='' or A.EMP_NO = @EMP_NO ) and (@DEPT_CD = '' or dept.dept_cd = @DEPT_CD)     
+ where B.YYYY = @YYYY and (@EMP_NO ='' or A.EMP_NO = @EMP_NO ) and (@DEPT_CD = '' or dept.dept_cd = @DEPT_CD)     
   order by   a.ROLL_PSTN    
             
  END 
