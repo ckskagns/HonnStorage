@@ -14,7 +14,7 @@
 
 
             
-ALTER PROCEDURE [dbo].[USP_H4007M5_KO883_CUD]              
+CREATE PROCEDURE [dbo].[USP_H4007M5_KO883_CUD]              
 (               
   @TBL_DATA    UTP_H4007M5_KO883 READONLY              
 , @USER_ID    NVARCHAR(13)              
@@ -130,11 +130,11 @@ BEGIN
   END              
   ELSE IF (@CUD_CHAR = 'D')              
   BEGIN              
-                  
-    DELETE FROM Ex_Number               
-    WHERE     
-	  YYYY = @YYYY   AND      
-      EMP_NO = @EMP_NO          
+                          
+    BEGIN      
+         SET @MSG_CD   = '122918' -- %1 저장에 실패했습니다.                   
+     RAISERROR(@MSG_CD, 16, 1)      
+    END          
       
               
   END              
